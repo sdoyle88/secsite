@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secsite-www
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: secsite-www
+  template:
+    metadata:
+      labels:
+        app: secsite-www
+    spec:
+      containers:
+      - image: ifunky/site:latest
+        name: secsite-www
+        ports:
+        - containerPort: 8080
