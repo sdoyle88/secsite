@@ -15,6 +15,9 @@ spec:
     spec:
       containers:
       - image: ifunky/site:latest
+        resources:
+          requests:
+            cpu: 1      
         name: secsite-www
         ports:
         - containerPort: 8080
