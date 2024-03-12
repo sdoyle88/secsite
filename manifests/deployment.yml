@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: secsite-www
+  name: secsite-www-deployment
+  labels:
+    app: secsite-www
 spec:
   replicas: 1
   revisionHistoryLimit: 0
@@ -16,8 +18,10 @@ spec:
       containers:
       - image: ifunky/site:latest
         resources:
+          limits:
+            cpu: "1"
           requests:
-            cpu: 1      
+            cpu: "0.5"    
         name: secsite-www
         ports:
-        - containerPort: 8080
+        - containerPort: 80

@@ -9,8 +9,8 @@ help:
 	@grep -E '^[a-zA-Z_-_\/]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 build: ## Build website
-	@docker buildx build --platform linux/amd64 . -t ifunky/site
-	@docker image inspect ifunky/site
+	@docker buildx build --platform linux/amd64 . -t ifunky/site:latest
+	@docker image inspect ifunky/site:latest
 
 deploy: ## Deploy website
 	@helm upgrade secsite-hugo ./helm/ifunky-secsite \
@@ -30,5 +30,5 @@ run: ## Run site in docker
 	echo "Goto http://http://localhost:8080/"
 
 push: ## Piush to docker repo
-	@docker tag secops ifunky/site
+	@docker tag ifunky/site:latest ifunky/site:latest
 	@docker push ifunky/site:latest
