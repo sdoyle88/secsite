@@ -1,6 +1,6 @@
-FROM klakegg/hugo as hugo
+FROM klakegg/hugo:latest-ext as hugo
 
-COPY ./secops /site
+COPY ./www /site
 
 WORKDIR /site
 RUN hugo --config ./config.toml

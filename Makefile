@@ -26,8 +26,8 @@ delete: ## Deploy website
 	@helm uninstall secsite-hugo
 
 run: ## Run site in docker
-	docker run -p 8080:80 secops
-	echo "Goto http://http://localhost:8080/"
+	docker run -p 8080:80 ifunky/site
+	echo "Goto http://localhost:8080/"
 
 push: ## Piush to docker repo
 	@docker tag ifunky/site:latest ifunky/site:latest
