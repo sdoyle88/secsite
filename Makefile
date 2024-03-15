@@ -10,7 +10,7 @@ help:
 
 build: ## Build website
 	@docker buildx build --platform linux/amd64 . -t ifunky/site:latest
-	@docker image inspect ifunky/site:latest
+	#@docker image inspect ifunky/site:latest
 
 deploy: ## Deploy website
 	@helm upgrade secsite-hugo ./helm/ifunky-secsite \
