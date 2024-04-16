@@ -21,6 +21,8 @@ deploy: ## Deploy website
 		--values helm/ifunky-secsite/values.yaml \
 		--set image.repository=ifunky/site \
 		--set image.tag=latest
+scan: ## Scan image
+	@wizcli docker scan --image ifunky/site:latest
 
 delete: ## Deploy website
 	@helm uninstall secsite-hugo
