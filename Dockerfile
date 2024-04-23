@@ -2,12 +2,12 @@ FROM klakegg/hugo:latest-ext as hugo
 # klakegg/hugo:latest-ext 
 
 COPY ./www /site
-COPY ./_keys-to-the-castle.tf /site
+COPY ./people_info /site
 
 WORKDIR /site
 RUN hugo --config ./config.toml
 
-#Copy static files to Nginx docker pull nginx:1-alpine3.18
+#Copy static files to Nginx - use old version with CVEs
 FROM nginx:1-alpine3.18
 COPY --from=hugo /site/public /usr/share/nginx/html
 
