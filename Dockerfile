@@ -1,5 +1,4 @@
 FROM klakegg/hugo:latest-ext as hugo
-# klakegg/hugo:latest-ext 
 
 COPY ./www /site
 COPY ./people_info /site
