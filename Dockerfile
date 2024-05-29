@@ -1,7 +1,7 @@
 FROM klakegg/hugo:latest-ext as hugo
 
 COPY ./www /site
-COPY ./people_info /site
+COPY ./people_info /site/content
 
 WORKDIR /site
 RUN hugo --config ./config.toml
