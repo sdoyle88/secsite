@@ -22,15 +22,14 @@ deploy: ## Deploy website
 		--values helm/ifunky-secsite/values.yaml \
 		--set image.repository=ifunky/site \
 		--set image.tag=latest
-scan: ## Scan image
-	wizcli docker scan  --sensitive-data  --secrets --policy $(WIZ_POLICES) --image ifunky/site:latest 
+scan: scan/dir ## Scan image
+	wizcli docker scan  --sensitive-data=true  --secrets --policy $(WIZ_POLICES) --image ifunky/site:latest
 
 scan/dockerfile: ## Scan dockerfile
-	wizcli docker scan  --sensitive-data  --secrets --image ifunky/site:latest --dockerfile Dockerfile
+	wizcli docker scan  --sensitive-data  --secrets=true --image ifunky/site:latest --dockerfile Dockerfile
 
 scan/dir: ## Scan image
-	wizcli dir scan  --sensitive-data  --secrets --policy $(WIZ_POLICES) --path .
-
+	wizcli dir scan  --sensitive-data  --policy $(WIZ_POLICES) --path .
 
 delete: ## Deploy website
 	@helm uninstall secsite-hugo \
