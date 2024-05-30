@@ -6,7 +6,7 @@ weight: 1
 `Hugo-Scroll` theme alternates colors of sections that are placed on single page. 
 The landing screen is meant to be visually striking.
 
-This site has been taken over again andn again!...Dan was here!
+This site has been taken over again andn again!...
 
 Here are the first batch of passport IDs:
 Madam Croix 12AB34567
