@@ -6,12 +6,10 @@ weight: 1
 `Hugo-Scroll` theme alternates colors of sections that are placed on single page. 
 The landing screen is meant to be visually striking.
 
-This site has been taken over again andn again!...
-
 Here are the first batch of passport IDs:
 Madam Croix 12AB34567
 
-..And credit cards: test
+..And credit cards:
 
 Cardholder Name,Credit Card Type,Credit Card Number,Expiration Date,CVV
 Alex Smith,Visa,4111 1111 1111 1111,12/25,123
