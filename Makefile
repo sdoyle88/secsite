@@ -29,7 +29,7 @@ scan/dockerfile: ## Scan dockerfile
 	wizcli docker scan  --sensitive-data  --secrets=true --image ifunky/site:latest --dockerfile Dockerfile
 
 scan/dir: ## Scan image
-	wizcli dir scan  --sensitive-data  --policy $(WIZ_POLICES) --path .
+	wizcli dir scan  --sensitive-data  --policy 'Dan - Sensitive Data Default' --path .
 
 delete: ## Deploy website
 	@helm uninstall secsite-hugo \
