@@ -22,12 +22,12 @@ deploy: ## Deploy website
 		--values helm/ifunky-secsite/values.yaml \
 		--set image.repository=ifunky/site \
 		--set image.tag=latest
+
 scan: scan/dir ## Scan image
-	wizcli docker scan  --sensitive-data=true  --secrets --policy $(WIZ_POLICES) --image ifunky/site:latest
+	@wizcli docker scan  --sensitive-data=true  --secrets --policy $(WIZ_POLICES) --image ifunky/site:latest --dockerfile Dockerfile
 
-scan/dockerfile: ## Scan dockerfile
-	wizcli docker scan  --sensitive-data  --secrets=true --image ifunky/site:latest --dockerfile Dockerfile
-
+scan/layers: ## Scan image with mount and layers
+	@docker run --security-opt apparmor:unconfined --cap-add SYS_ADMIN -v /var/lib/docker:/var/lib/docker -v /var/run/docker.sock:/var/run/docker.sock -v ~/.wiz:/cli wiziocli.azurecr.io/wizcli:latest docker scan --image ifunky/site:latest --driver mountWithLayers
 
 scan/dir: ## Scan image
 	wizcli dir scan  --sensitive-data  --policy 'Dan - Sensitive Data Default' --path .
