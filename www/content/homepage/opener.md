@@ -16,6 +16,7 @@ Alex Smith,Visa,4111 1111 1111 1111,12/25,123
 Jamie Doey,MasterCard,5500 0000 0000 0004,01/26,456
 Patric Jordan,American Express,3400 0000 0000 009,03/24,789
 Bob Jones,,American Express,3400 0000 0000 009,03/25,789 
+dan card
 
 Single-page approach is oriented towards small to medium content length, that won't overwhelm the user. 
 You can also delegate lengthier, less important or more sizeable content to [dedicated pages](services).
