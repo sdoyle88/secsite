@@ -1,0 +1,16 @@
+{
+    "name": "community-web-posts-app",
+    "version": "1.0.0",
+    "description": "A Node.js app with transient dependencies for SCA testing",
+    "main": "index.js",
+    "dependencies": {
+        "express": "4.17.1",
+        "lodash": "4.17.15"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "keywords": []
+}
